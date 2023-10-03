@@ -10,12 +10,12 @@ const Maindiv = styled.p`
 export const Home = () => {
   return (
     <><Navbar></Navbar>
-    <Maindiv style={{backgroundImage:`url(${process.env.PUBLIC_URL+'/Desktop-1.jpg'})`,
-  backgroundRepeat:'no-repeat', width:'100%'}}>
-      <div className='container-fluid bg-dark hero-section text-white'>
-        <div className='row'>
-          <div className='col-sm-6'>
-            <h6>grab your smartphone, prepare your appetite, and embark on a captivating journey through these food quotes and captions that are sure to tantalize not only your followers' taste buds but also their imagination.</h6>
+    <Maindiv className='bg-dark'>
+      <div className='container bg-dark hero-section text-white main-div'>
+        <div className='row pt-5'>
+          <div className='col-sm-6 pt-5'>
+            <h6 className='pt-5'>grab your smartphone, prepare your appetite, and embark on a captivating journey through these food quotes and captions that are sure to tantalize not only your followers' taste buds but also their imagination.</h6>
+            <button type="button" class="btn btn-outline-warning Reserve-button mt-5">Reserve a Table</button>
           </div>
         </div>
       </div>

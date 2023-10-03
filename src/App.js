@@ -8,7 +8,7 @@ import { Aboutus } from './pages/Aboutus';
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
-import { fontAwesome } from 'fontawesome';
+import{Feedback}from'./pages/Feedback';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<Home />}/>
           <Route path='aboutus' element={<Aboutus/>} />
           <Route path="menu" element={<Menu/>} />
-         
+          <Route path="feedback" element={<Feedback/>} />
           <Route path="contact" element={<Contact/>} />
         
       </Routes>

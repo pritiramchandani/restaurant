@@ -1,0 +1,57 @@
+.fa-minus {
+    color: #F8B525;
+}
+
+
+
+.main-div{
+    height: 100vh;
+}
+
+/* About CSS */
+.aboutus-lastsection {
+    height: 35px;
+    width: 35px;
+    border: 2px solid #FFD160;
+    border-radius: 50%;
+}
+
+/* Menu CSS */
+
+.menu-div {
+    height: auto;
+    width: 14%;
+    border-radius: 12%;
+    background-color: #363636;
+    position: relative;
+
+}
+
+.discount-tag-first {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FFD160;
+    position: absolute;
+    top: 0;
+    left: 128px;
+
+}
+
+.discount-tag-second {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FFD160;
+    position: absolute;
+    bottom: 0;
+    left: 128px;
+
+}
+
+
+
+
+.see-all-menu {
+    color: #FFD160;
+}
