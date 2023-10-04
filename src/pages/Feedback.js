@@ -19,10 +19,10 @@ export const Feedback = () => {
             <FontAwesomeIcon icon={faMinus} className='fa-minus  pt-2 ps-2' />
           </p>
         </firstsection>
-        <SwiperSlider />
+            <SwiperSlider />
 
         <secondsection>
-
+          
         </secondsection>
 
 
