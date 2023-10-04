@@ -7,6 +7,34 @@ import { SwiperSlider } from '../components/SwiperSlider'
 
 const Maindiv = styled.p``
 
+const testimonial =
+  [
+    {
+      name: "priti",
+      review: "1234",
+      image:"https://media.istockphoto.com/id/1318928248/photo/portrait-of-a-young-man.jpg?s=612x612&w=0&k=20&c=ayy0fWfzLoC20BlYXDQmle1vz0a9Qrv8ssSwE3dLpzA=",
+      rating:4
+    },
+    {
+      name: "priti",
+      review: "1234",
+      image:"https://media.istockphoto.com/id/1318928248/photo/portrait-of-a-young-man.jpg?s=612x612&w=0&k=20&c=ayy0fWfzLoC20BlYXDQmle1vz0a9Qrv8ssSwE3dLpzA=",
+      rating:4
+    },
+    {
+      name: "priti",
+      review: "1234",
+      image:"https://media.istockphoto.com/id/1318928248/photo/portrait-of-a-young-man.jpg?s=612x612&w=0&k=20&c=ayy0fWfzLoC20BlYXDQmle1vz0a9Qrv8ssSwE3dLpzA=",
+      rating:4
+    },
+    {
+      name: "priti",
+      review: "1234",
+      image:"https://media.istockphoto.com/id/1318928248/photo/portrait-of-a-young-man.jpg?s=612x612&w=0&k=20&c=ayy0fWfzLoC20BlYXDQmle1vz0a9Qrv8ssSwE3dLpzA=",
+      rating:4
+    }
+  ]
+
 export const Feedback = () => {
   return (
     <><Navbar></Navbar>
@@ -19,35 +47,7 @@ export const Feedback = () => {
             <FontAwesomeIcon icon={faMinus} className='fa-minus  pt-2 ps-2' />
           </p>
         </firstsection>
-            <SwiperSlider />
-
-        <secondsection>
-          
-        </secondsection>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <SwiperSlider testimonial={testimonial} />
 
       </Maindiv>
 

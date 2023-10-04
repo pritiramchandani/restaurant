@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 
-export const SwiperSlider = () => {
+export const SwiperSlider = (props) => {
   return (
     <Swiper
       spaceBetween={50}
@@ -12,10 +12,14 @@ export const SwiperSlider = () => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
+    this.props.testimonial.map((number) = {
+
       <SwiperSlide  style={{"color":"#fff"}}>
         <p  style={{"color":"#fff"}}>Slide 1</p>
-      </SwiperSlide>
-      <SwiperSlide  style={{"color":"#fff"}}>
+      </SwiperSlide>})
+
+      
+      {/* <SwiperSlide  style={{"color":"#fff"}}>
         <p  style={{"color":"#fff"}}>Slide 2</p>
       </SwiperSlide>
       <SwiperSlide  style={{"color":"#fff"}}>
@@ -23,7 +27,7 @@ export const SwiperSlider = () => {
       </SwiperSlide>
       <SwiperSlide  style={{"color":"#fff"}}>
         <p  style={{"color":"#fff"}}>Slide 4</p>
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   );
 };
