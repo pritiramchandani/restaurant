@@ -12,11 +12,18 @@ export const SwiperSlider = () => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+      <SwiperSlide  style={{"color":"#fff"}}>
+        <p  style={{"color":"#fff"}}>Slide 1</p>
+      </SwiperSlide>
+      <SwiperSlide  style={{"color":"#fff"}}>
+        <p  style={{"color":"#fff"}}>Slide 2</p>
+      </SwiperSlide>
+      <SwiperSlide  style={{"color":"#fff"}}>
+        <p  style={{"color":"#fff"}}>Slide 3</p>
+      </SwiperSlide>
+      <SwiperSlide  style={{"color":"#fff"}}>
+        <p  style={{"color":"#fff"}}>Slide 4</p>
+      </SwiperSlide>
     </Swiper>
   );
 };

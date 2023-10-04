@@ -20,35 +20,6 @@ export const Feedback = () => {
           </p>
         </firstsection>
             <SwiperSlider />
-
-        <secondsection>
-          
-        </secondsection>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </Maindiv>
 
     </>
