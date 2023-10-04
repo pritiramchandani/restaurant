@@ -7,7 +7,7 @@ import { SwiperSlider } from '../components/SwiperSlider'
 
 const Maindiv = styled.p``
 
-const testimonial =
+const testimonials =
   [
     {
       name: "priti",
@@ -47,7 +47,7 @@ export const Feedback = () => {
             <FontAwesomeIcon icon={faMinus} className='fa-minus  pt-2 ps-2' />
           </p>
         </firstsection>
-        <SwiperSlider testimonial={testimonial} />
+        <SwiperSlider testimonials={testimonials} />
 
       </Maindiv>
 
