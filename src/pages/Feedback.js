@@ -48,6 +48,7 @@ export const Feedback = () => {
           </p>
         </firstsection>
         <SwiperSlider testimonials={testimonials} />
+        
 
       </Maindiv>
 
