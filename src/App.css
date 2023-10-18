@@ -1,3 +1,19 @@
+/* Home page*/
+
+.bg-image{
+    background-image: url("./images/hero-section-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    
+    
+    
+}
+
+
+
+
+
+
 .fa-minus {
     color: #F8B525;
 }
@@ -14,6 +30,14 @@
     width: 35px;
     border: 2px solid #FFD160;
     border-radius: 50%;
+}
+
+
+.about-image{
+    height: 400px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 /* Menu CSS */
