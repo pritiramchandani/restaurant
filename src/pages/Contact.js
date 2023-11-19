@@ -4,27 +4,31 @@ import { styled } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faMinus } from '@fortawesome/free-solid-svg-icons'
 
-const Maindiv = styled.p``
+const Maindiv = styled.div``
+
+const Firstsection = styled.div``
+
+const Secondsection= styled.div``
 
 export const Contact = () => {
   return (
     <>
       <Navbar></Navbar>
       <Maindiv className='bg-dark pt-5 contactus-div'>
-        <firstsection className=' pt-5 text-white'>
+        <Firstsection className=' pt-5 text-white'>
           <p className='text-center  pt-5 mt-5 fs-5'>
             <FontAwesomeIcon icon={faMinus} className=' fa-minus pt-2 pe-2' />
             Contact Us
             <FontAwesomeIcon icon={faMinus} className='fa-minus  pt-2 ps-2' />
           </p>
-        </firstsection>
-
-        <secondsection>
+        </Firstsection>
+          
+        <Secondsection>
           <div className='container pt-3 '>
             <div className='row'>
             <div className='col-sm-6 '>
-              <div class="d-flex">
-                <div class="p-2 flex-fill">
+              <div className="d-flex">
+                <div className="p-2 flex-fill">
                   <p className=' address  ps-4 fs-5'>
                     <FontAwesomeIcon icon={faMinus} className='fa-minus pe-2 ' />
                     Address</p>
@@ -49,7 +53,7 @@ export const Contact = () => {
             
           </div>
           </div>
-        </secondsection>
+        </Secondsection>
       </Maindiv>
     </>
 
