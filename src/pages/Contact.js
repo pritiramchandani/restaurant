@@ -10,19 +10,19 @@ export const Contact = () => {
   return (
     <>
       <Navbar></Navbar>
-      <Maindiv className='bg-dark'>
-        <firstsection className='text-white'>
-          <p className='text-center fs-5'>
+      <Maindiv className='bg-dark pt-5 contactus-div'>
+        <firstsection className=' pt-5 text-white'>
+          <p className='text-center  pt-5 mt-5 fs-5'>
             <FontAwesomeIcon icon={faMinus} className=' fa-minus pt-2 pe-2' />
             Contact Us
             <FontAwesomeIcon icon={faMinus} className='fa-minus  pt-2 ps-2' />
           </p>
         </firstsection>
 
-        <secondsection>
-          <div className='container'>
+        <secondsection className= ' border'>
+          <div className='container pt-3 '>
             <div className='row'>
-            <div className='col-sm-6 pt-5'>
+            <div className='col-sm-6 '>
               <div class="d-flex">
                 <div class="p-2 flex-fill">
                   <p className=' address  ps-4 fs-5'>
