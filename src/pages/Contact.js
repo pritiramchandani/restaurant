@@ -19,7 +19,7 @@ export const Contact = () => {
           </p>
         </firstsection>
 
-        <secondsection className= ' border'>
+        <secondsection>
           <div className='container pt-3 '>
             <div className='row'>
             <div className='col-sm-6 '>
