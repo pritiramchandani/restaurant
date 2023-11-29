@@ -95,5 +95,207 @@
 
 
 
+/* login */
+
+
+
+@import "toastr";
+
+
+
+
+.main-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ 
+}
+
+label{
+  margin-top: 0.5rem;
+  font-size: small;
+}
+
+input[type=text],input[type=email],input[type=password]{
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 300px;
+}
+
+.button{
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid gray;
+ background-color: #F8B525;
+ color: black;
+ cursor: pointer;
+ border: none;
+}
+
+.form{
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  justify-items: flex-start;
+  width: auto;
+  padding: 30px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.7);
+  border-radius: 5px;
+}
+
+.forget-password{
+
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Admin */
+
+.first-section {
+  border-right: 1px solid rgb(233, 255, 178);
+
+}
+
+.main-div{
+  overflow: hidden;
+}
+
+.image-div {
+  width: 104%;
+  border-bottom: 1px solid rgb(233, 255, 178);
+
+}
+
+
+
+
+
+.Authorisation-btn {
+  background-color: #FFD160;
+  height: 40px;
+  width:87% ;
+  border: none;
+  border-radius: 5px;
+}
+
+.myapp-btn {
+  width: 87%;
+  background-color: #FFD160;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+
+}
+
+/* second-section */
+
+/* .second-section-div {
+
+  height: 101px;
+  width: 100%;
+  border-bottom: 1px solid rgb(233, 255, 178);
+
+  
+}
+
+.adduser-btn{
+  background-color: #FFD160;
+  border: none;
+  border-radius: 5px;
+
+}
+
+
+.search-btn-col{
+  height: 50px;
+  width: 87%;
+  border-radius: 10px;
+  border: 1px solid rgb(233, 255, 178);
+
+}
+
+.search-btn{
+  
+  float: right;
+  background-color: #FFD160;
+  border-radius: 5px;
+  border: none;
+}
+.arrow-btn{
+  border: #FFD160 solid 1px;
+  height: 30px;
+  width: 30px;
+}
+
+.Minus-btn{
+  border: #FFD160 solid 1px;
+  height: 40px;
+  width: 180%;
+  text-align: start;
+  border-radius: 10px;
+}
+
+.down-arrow{
+  float: right;
+}
+
+.go-btn{
+  height: 40px;
+  width: 40px;
+  margin-left: 100px;
+  border: #FFD160 1px solid;
+  border-radius:5px;
+
+} */
+
+
+
+
+.order{
+  height: 200px;
+  width: 30%;
+  text-align: center;
+  background-color:#FFD160;
+  border-radius: 6px;
+}
+
+
+.product{
+  height: 200px;
+  width: 30%;
+  text-align: center;
+ background-color:#FFD160;
+ border-radius: 6px;
+}
+
+.employee{
+  height: 200px;
+  width: 30%;
+  text-align: center;
+  background-color:#FFD160;
+  border-radius: 6px;
+}
+
+.category{
+  height: 200px;
+  width: 30%;
+  text-align: center;
+  background-color:#FFD160;
+  border-radius: 6px;
+}
+
+
+
+
+
 
 

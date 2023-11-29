@@ -10,11 +10,11 @@ import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
 import{Feedback}from'./pages/Feedback';
 import { Login } from './admin/pages/Login';
-import { Admin } from './admin/pages/Admin';
+import { Admin } from './admin/pages/Admin  ';
 
 
 function App() {
-  return (
+  return (                                  
     <>
    
 
