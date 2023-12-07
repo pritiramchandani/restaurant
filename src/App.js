@@ -11,6 +11,9 @@ import { Contact } from './pages/Contact';
 import{Feedback}from'./pages/Feedback';
 import { Login } from './admin/pages/Login';
 import { Admin } from './admin/pages/Admin';
+import POS from './admin/pages/POS';
+import Dashboard from './admin/pages/Dashboard';
+
 
 
 function App() {
@@ -30,7 +33,9 @@ function App() {
             <Route path='login' element={<Login/>} />
             <Route path='register' element={<Login/>} />
             <Route path='forgetpassword' element={<Login/>} />
-            <Route path='dashboard' element={<Login/>} />
+            <Route path='dashboard' element={<Dashboard/>} />
+            <Route path='pos' element={<POS/>} />
+
           </Route>
       </Routes>
     </BrowserRouter>
