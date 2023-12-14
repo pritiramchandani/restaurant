@@ -1,7 +1,4 @@
 import Logo from './../../images/logo.png';
-
-
-
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faArrowUpWideShort, faArrowsTurnToDots, faBagShopping, faDownLeftAndUpRightToCenter, faEnvelope, faFile, faMagnifyingGlass, faPen, faPlus, faRightFromBracket, faTicket, faUpDownLeftRight, faUser, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +11,7 @@ const Maindiv = styled.div`
 }
 
 
-.main-div{
+.admin-main-div{
   overflow: hidden;
   width:100%;
 }
@@ -27,12 +24,12 @@ const Maindiv = styled.div`
 
 
 .dashboard {
-  height:50px;
-  width:104%;
-  border:rgb(233, 255, 178) solid 1px; 
-  border-radius:50px;
-  overflow: hidden;
-  z-index:-1;
+  text-decoration:none;
+  
+}
+
+.pos{
+  text-decoration:none;
   
 }
 
@@ -93,10 +90,10 @@ border-radius:50px;
 
 
 
-export const  Admin=()=> {
+export const Admin = () => {
   return (
     <>
-      <Maindiv className='main-div'>
+      <Maindiv className='admin-main-div'>
         <div className=' bg-dark '>
           <div className='row'>
             <div className='col-sm-3 first-section'>
@@ -115,8 +112,8 @@ export const  Admin=()=> {
                   </div>
                 </Link>
                 {/*  */}
-                
-                <Link class="d-flex ps-3 flex-row" to={'/admin/pos'}>
+
+                <Link class="d-flex pos ps-3 flex-row" to={'/admin/pos'}>
                   <div class="p-2  text-white">
                     <FontAwesomeIcon icon={faBagShopping} />
                   </div>
@@ -138,7 +135,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faUsers}/>
+                    <FontAwesomeIcon icon={faUsers} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Customer</p>
@@ -149,7 +146,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faTicket} />
+                    <FontAwesomeIcon icon={faTicket} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Coupon</p>
@@ -160,7 +157,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faPen} />
+                    <FontAwesomeIcon icon={faPen} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Expense</p>
@@ -182,7 +179,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faUsers}/>
+                    <FontAwesomeIcon icon={faUsers} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Branch/Store</p>
@@ -193,7 +190,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faFile} />
+                    <FontAwesomeIcon icon={faFile} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Reports</p>
@@ -204,7 +201,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faArrowsTurnToDots} />
+                    <FontAwesomeIcon icon={faArrowsTurnToDots} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Tools</p>
@@ -214,7 +211,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon={faUser} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Profile</p>
@@ -223,7 +220,7 @@ export const  Admin=()=> {
 
                 <div class="d-flex ps-3 flex-row">
                   <div class="p-2  text-white">
-                  <FontAwesomeIcon icon={faRightFromBracket} />
+                    <FontAwesomeIcon icon={faRightFromBracket} />
                   </div>
                   <div class="p-2 text-white">
                     <p className='fw-4'>Logout</p>
@@ -235,12 +232,12 @@ export const  Admin=()=> {
             {/* Second Part */}
 
             <div className='col-sm-9 pt-5 order-div' >
-            <Outlet></Outlet>
+              <Outlet></Outlet>
             </div>
-           
+
 
           </div>
-          
+
         </div>
 
       </Maindiv>

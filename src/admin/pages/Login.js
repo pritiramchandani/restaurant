@@ -4,7 +4,64 @@ import styled from 'styled-components'
 import toastr from "toastr";
 
 
-const Maindiv = styled.div``
+const Maindiv = styled.div`
+.login-main-div{
+  
+    height: 100vh;
+    width: 100%;
+   
+  }
+  
+  label{
+    margin-top: 0.5rem;
+    font-size: small;
+  }
+  
+  input[type=text],input[type=email],input[type=password]{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 300px;
+  }
+  
+  .button{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+   background-color: #F8B525;
+   color: black;
+   cursor: pointer;
+   border: none;
+  }
+  
+  .form{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    justify-items: flex-start;
+    width: auto;
+    padding: 30px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.7);
+    border-radius: 5px;
+  }
+  
+  .forget-password{
+  
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+
+
+`
 
 const Link = styled.div``
 
@@ -35,7 +92,7 @@ const submitForm = (event)=>{
 
   return (
         <div>
-            <Maindiv className='main-div bg-dark'>
+            <Maindiv className='login-main-div bg-dark'>
                 <form action=""  onSubmit={submitForm}>
                     <div className='form'>
                         {/* <label>Username</label>
