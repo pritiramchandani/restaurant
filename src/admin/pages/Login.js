@@ -5,10 +5,10 @@ import toastr from "toastr";
 
 
 const Maindiv = styled.div`
-.login-main-div{
-  
+{
+    overflow:hidden;
     height: 100vh;
-    width: 100%;
+    width:100%;
    
   }
   
@@ -65,9 +65,6 @@ const Maindiv = styled.div`
 
 const Link = styled.div``
 
-
-
-
 export const Login = (props) =>{
 
 const [email, setEmail] = useState("")
@@ -92,7 +89,7 @@ const submitForm = (event)=>{
 
   return (
         <div>
-            <Maindiv className='login-main-div bg-dark'>
+            <Maindiv className='login-div bg-dark'>
                 <form action=""  onSubmit={submitForm}>
                     <div className='form'>
                         {/* <label>Username</label>
@@ -110,7 +107,7 @@ const submitForm = (event)=>{
                 <input type='password' name='pass2'/> */}
 
                         <label></label>
-                       <button type='submit' className='button' >Login</button>
+                       <button type='submit' className='button'>Login</button>
                     </div>
                 </form>
             </Maindiv>
