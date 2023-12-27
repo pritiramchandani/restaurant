@@ -180,7 +180,7 @@ export const Admin = () => {
                       <FontAwesomeIcon icon={faBagShopping} />
                     </div>
                     <div class="p-2 text-white">
-                      <p className='fw-4'> Service</p>
+                      <p className='fw-4'>Product</p>
                     </div>
                   </div>
 

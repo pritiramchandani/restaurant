@@ -5,13 +5,11 @@ import toastr from "toastr";
 
 
 const Maindiv = styled.div`
-{
-    overflow:hidden;
-    height: 100vh;
-    width:100%;
-   
-  }
-  
+
+  height:100vh;
+  background-color:black;
+
+
   label{
     margin-top: 0.5rem;
     font-size: small;
@@ -23,11 +21,11 @@ const Maindiv = styled.div`
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid gray;
-    width: 300px;
+    width: 100%;
   }
   
-  .button{
-    margin-top: 0.5rem;
+  .login-button{
+    margin-top: 0.8rem;
     padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
@@ -41,19 +39,23 @@ const Maindiv = styled.div`
   
   .form{
     background-color:white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     display: flex;
     flex-direction: column;
     justify-content: left;
-    justify-items: flex-start;
-    width: auto;
+    justify-items: flex-center;
+    height:auto;
+    width:28%;
     padding: 30px;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.7);
     border-radius: 5px;
   }
   
   .forget-password{
-  
-    float: right;
+    text-align:right;
     text-decoration: none;
     cursor: pointer;
   }
@@ -65,20 +67,20 @@ const Maindiv = styled.div`
 
 const Link = styled.div``
 
-export const Login = (props) =>{
+export const Login = (props) => {
 
-const [email, setEmail] = useState("")
-const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
 
-const submitForm = (event)=>{
+  const submitForm = (event) => {
     event.preventDefault();
 
-    const newEntry = {email:email, password:password};
+    const newEntry = { email: email, password: password };
 
     toastr.success("Hello mere sonu");
-    
-}
+
+  }
 
 
 
@@ -88,29 +90,32 @@ const submitForm = (event)=>{
 
 
   return (
-        <div>
-            <Maindiv className='login-div bg-dark'>
-                <form action=""  onSubmit={submitForm}>
-                    <div className='form'>
-                        {/* <label>Username</label>
+
+    <Maindiv>
+      <form className='form mx-auto d-flex' action="" onSubmit={submitForm}>
+        <div >
+          {/* <label>Username</label>
                 <input type='text' name='user'/> */}
 
-                        <label>Email</label>
-                        <input type='email' name='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
+          <label>Email</label>
+          <input type='email' name='email' value={email} onChange={(event) => setEmail(event.target.value)} />
 
-                        <label>Password</label>
-                        <input type='password' name='pass1' value= { password} onChange={(event)=> setPassword(event.target.value)}/>
+          <label>Password</label>
+          <input type='password' name='pass1' value={password} onChange={(event) => setPassword(event.target.value)} />
 
-                        <label><Link to='' className='forget-password'>Forget Password</Link></label>
+          <label><Link to='' className='forget-password'>Forget Password</Link>
 
-                        {/* <label>Confirm Password</label>
+            <button type='submit' className='login-button'>Login</button>
+          </label>
+
+          {/* <label>Confirm Password</label>
                 <input type='password' name='pass2'/> */}
 
-                        <label></label>
-                       <button type='submit' className='button'>Login</button>
-                    </div>
-                </form>
-            </Maindiv>
         </div>
-    );
+      </form>
+    </Maindiv>
+
+
+
+  );
 };
