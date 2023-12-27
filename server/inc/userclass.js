@@ -1,9 +1,9 @@
 var validator = require('validator');
-const Queries = require("./queries");
+const Queries = require('./../models/queries');
 var jwt = require('jsonwebtoken');
 
 
-const queriesobj = new Queries();
+const queriesobj = new Queries;
 
 class UsersClass{
     createUser = async (req,res) => {
@@ -34,9 +34,10 @@ class UsersClass{
         if(!validator.isStrongPassword(data.password,[{ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1}])){
             return res.status(400).json({ message: 'Make password Strong' });
         }
+
         const emailCount = await queriesobj.getRecordCount('users',{email:data.email});
 
-        if(emailCount > 0){
+        if(emailCount[0].count > 0){
             return res.status(400).json({ message: 'Email already Registered' });
         }
 
@@ -70,16 +71,21 @@ class UsersClass{
             return res.status(400).json({ message: 'Invalid Email' });
         }
 
-        const userCount = await queriesobj.getRecordCount('users',{email:data.email,password:data.password});
+        var where = "email='"+data.email+"' and password='"+data.password+"'";
+
+        const userCount = await queriesobj.getRecordCount('users',where);
         
-        if(userCount < 1){
+        if(userCount[0].count < 1){
             return res.status(301).json({ message: 'Invalid Login' });
         }
 
-        let userInfo = await queriesobj.getSelectWithWhere('users',{email:data.email,password:data.password});
+        let userInfo = await queriesobj.getSelectWithWhere('users',where);
+
+        console.log(userInfo);
+
         userInfo = userInfo[0];
 
-        const token = this.generateToken(userInfo, process.env.APP_SECRETE_KEY);
+        const token = this.generateToken(userInfo, 'hotelmenu');
 
         return res.status(200).json({ message: 'Thank you for Login', token: token });
 
@@ -111,7 +117,7 @@ class UsersClass{
         const token = authHeader.split(' ')[1];
 
         
-        jwt.verify(token, process.env.APP_SECRETE_KEY, (err, user) => {
+        jwt.verify(token, 'hotelmenu', (err, user) => {
             
             if (err) {
                 return res.status(403).json({ message: 'Forbidden', err: err });
@@ -123,4 +129,5 @@ class UsersClass{
         });
     }
 }
+
 module.exports = UsersClass;
