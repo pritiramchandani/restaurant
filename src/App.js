@@ -1,8 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from './components/Navbar';
 import { Aboutus } from './pages/Aboutus';
 import { Home } from './pages/Home';

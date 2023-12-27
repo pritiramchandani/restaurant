@@ -1,16 +1,19 @@
 // @flow 
+import axios from 'axios';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import toastr from "toastr";
+import 'toastr/build/toastr.css';
 
 
 const Maindiv = styled.div`
-{
+
     overflow:hidden;
     height: 100vh;
+    background-color:#000;
     width:100%;
    
-  }
+  
   
   label{
     margin-top: 0.5rem;
@@ -23,7 +26,7 @@ const Maindiv = styled.div`
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid gray;
-    width: 300px;
+    width:100%;
   }
   
   .button{
@@ -42,13 +45,23 @@ const Maindiv = styled.div`
   .form{
     background-color:white;
     display: flex;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     flex-direction: column;
     justify-content: left;
     justify-items: flex-start;
-    width: auto;
+    width:25%;
     padding: 30px;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.7);
     border-radius: 5px;
+  }
+
+  @media(max-width:768px){
+    .form{
+      width:70%;
+    }
   }
   
   .forget-password{
@@ -75,6 +88,14 @@ const submitForm = (event)=>{
     event.preventDefault();
 
     const newEntry = {email:email, password:password};
+
+    axios.post('http://localhost:5000/login', newEntry)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
     toastr.success("Hello mere sonu");
     
