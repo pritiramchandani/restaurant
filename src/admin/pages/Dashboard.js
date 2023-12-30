@@ -18,7 +18,10 @@ export default function Dashboard() {
         <>
             <div className='row'>
                 <div className=" col-sm-6 d-flex justify-content-start mb-3">
+<<<<<<< HEAD
                     <div className="p-2"><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </div>
+=======
+>>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
                     <div className="p-2"><h4 className='text-white'>Dashboard</h4></div>
                 </div>
 

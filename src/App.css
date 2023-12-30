@@ -94,6 +94,10 @@
 }
 
 
+/* Custom Css */
+Link{
+    cursor: pointer;
+}
 
 /* login */
 

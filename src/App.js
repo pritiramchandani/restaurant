@@ -8,18 +8,38 @@ import { Aboutus } from './pages/Aboutus';
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
-import{Feedback}from'./pages/Feedback';
+import { Feedback } from './pages/Feedback';
 import { Login } from './admin/pages/Login';
 import { Admin } from './admin/pages/Admin';
 import POS from './admin/pages/POS';
 import Dashboard from './admin/pages/Dashboard';
+<<<<<<< HEAD
 import { Product } from './admin/pages/Product';
+=======
+import PrivateRoute from './guard/PrivateRoute';
+import { useEffect, useState } from 'react';
+>>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
 
 
 
 function App() {
-  return (                                  
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(()=>{
+    let token = localStorage.getItem('token');
+    console.log(token);
+    if (token.length > 0) {
+      setIsAuthenticated(!isAuthenticated);
+    }
+
+    console.log(token);
+  },[]);
+
+
+  return (
     <>
+<<<<<<< HEAD
    
 
     <BrowserRouter>
@@ -37,12 +57,42 @@ function App() {
             <Route path='dashboard' element={<Dashboard/>} />
             <Route path='pos' element={<POS/>} />
             <Route path='product' element={<Product/>} />
+=======
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='aboutus' element={<Aboutus />} />
+          <Route path="menu" element={<Menu />} />
+          <Route path="feedback" element={<Feedback />} />
+          <Route path="contact" element={<Contact />} />
+>>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
 
+          <Route path='admin' element={<Admin />} >
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Login />} />
+            <Route path='forgetpassword' element={<Login />} />
+            <Route
+              path="dashboard"
+              element={<PrivateRoute
+                element={<Dashboard />}
+                isAuthenticated={isAuthenticated}
+                fallbackPath="/admin/login"
+              />}
+            />
+            <Route
+              path="pos"
+              element={<PrivateRoute
+                element={<POS />}
+                path="pos"
+                isAuthenticated={isAuthenticated}
+                fallbackPath="/admin/login"
+              />}
+            />
           </Route>
-      </Routes>
-    </BrowserRouter>
-    
-    
+        </Routes>
+      </BrowserRouter>
+
+
     </>
   );
 }

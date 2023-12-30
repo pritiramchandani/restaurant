@@ -18,7 +18,7 @@ export const Home = () => {
               on a captivating journey through these food quotes and captions that are 
               sure to tantalize not only your followers' taste buds but also their imagination.</h6>
               <div className='mt-5'>
-              <button type="button" class="btn btn-outline-warning Reserve-button mt-5">Reserve a Table</button>
+              <button type="button" className="btn btn-outline-warning Reserve-button mt-5">Reserve a Table</button>
               </div>
              
             </div>
