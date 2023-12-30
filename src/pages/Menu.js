@@ -72,7 +72,7 @@ export const Menu = () => {
 
 
 
-        <div class="container d-flex justify-content-around bg-dark pb-5 mb-3">
+        <div className="container d-flex justify-content-around bg-dark pb-5 mb-3">
 
           {data.map((element, index) => {
 
@@ -81,7 +81,7 @@ export const Menu = () => {
               elePosition = true
             }
 
-            return <>{elePosition ? <div class="p-2 pb-4 text-white menu-div">
+            return <>{elePosition ? <div className="p-2 pb-4 text-white menu-div">
 
               <p className='text-center' dangerouslySetInnerHTML={{ __html: element.title }}></p>
               <img src={element.image} className='mx-auto d-flex rounded img-fluid pt-3'></img>
@@ -92,7 +92,7 @@ export const Menu = () => {
               :
 
               
-              <div class="p-2 pb-4 text-white menu-div">
+              <div className="p-2 pb-4 text-white menu-div">
                 <p className='text-center' dangerouslySetInnerHTML={{ __html: element.title }}></p>
                 <img src={element.image} className='mx-auto d-flex rounded img-fluid pt-3'></img>
                 <div className='discount-tag-second text-center text-dark pt-2 '>{element.price}</div>
@@ -104,12 +104,12 @@ export const Menu = () => {
             })}
 
 
-            {/* <div class="p-2 pb-4 text-white menu-div">
+            {/* <div className="p-2 pb-4 text-white menu-div">
             <p className='text-center'>Chicken<br></br>Steak</p>
             <img src='/images/image4.jpg' className='mx-auto d-flex rounded img-fluid pt-3'></img>
             <div className='discount-tag-first text-center text-dark pt-2 '>$34</div>
           </div>
-          <div class="p-2 pb-4 text-white menu-div">
+          <div className="p-2 pb-4 text-white menu-div">
             <p className='text-center'>Pizza<br></br>Squilied Fillet</p>
             <img src='/images/pizza.jpg' className='mx-auto d-flex rounded img-fluid pt-3'></img>
             <div className='discount-tag-second text-center text-dark pt-2 '>$34</div>

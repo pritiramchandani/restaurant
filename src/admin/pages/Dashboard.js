@@ -17,14 +17,13 @@ export default function Dashboard() {
     return (
         <>
             <div className='row'>
-                <div class=" col-sm-6 d-flex justify-content-start mb-3">
-                    <div class="p-2"><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </div>
-                    <div class="p-2"><h4 className='text-white'>Dashboard</h4></div>
+                <div className=" col-sm-6 d-flex justify-content-start mb-3">
+                    <div className="p-2"><h4 className='text-white'>Dashboard</h4></div>
                 </div>
 
 
-                <div class=" col-sm-6 d-flex justify-content-end mb-3">
-                    <div class=" me-5 mt-2">
+                <div className=" col-sm-6 d-flex justify-content-end mb-3">
+                    <div className=" me-5 mt-2">
                         <FontAwesomeIcon icon={faBell} style={{ color: "#ffd160", }} className='fs-5  ps-2 pt-2 text-center' />
                     </div>
                     <div className='me-5 mb-5'>

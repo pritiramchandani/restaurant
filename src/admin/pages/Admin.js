@@ -1,22 +1,22 @@
 import Logo from './../../images/logo.png';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faArrowUpWideShort, faArrowsTurnToDots, faBagShopping, faDownLeftAndUpRightToCenter, faEnvelope, faFile, faMagnifyingGlass, faPen, faPlus, faRightFromBracket, faTicket, faUpDownLeftRight, faUser, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { faAngleDown, faArrowUpWideShort, faArrowsTurnToDots, faBagShopping, faBars, faDownLeftAndUpRightToCenter, faEnvelope, faFile, faMagnifyingGlass, faPen, faPlus, faRightFromBracket, faTicket, faUpDownLeftRight, faUser, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import LogoutModal from '../../components/LogoutModal';
+import { useState } from 'react';
 
 
 
 const Maindiv = styled.div`
 
-.first-section {
-  border-right: 1px solid rgb(233, 255, 178);
+width:100%;
+min-height:100%;
+height:{ 100vh;
+
+.sidebar  {
+  borde+}r-right: 1px solid rgb(233, 255, 178);
   
-}
-
-
-.admin-main-div{
-  overflow: hidden;
-  width:100%;
 }
 
 .image-div {
@@ -90,157 +90,185 @@ border-radius:50px;
 
 `
 
-
+const SideBarHumburgur = styled.button`
+  position: absolute;
+  left: 25%;
+  width: 100px;
+  top: 10px;
+  border: none;
+  background: transparent;
+`
 
 
 export const Admin = () => {
 
   const location = useLocation();
+  const navigator = useNavigate();
   console.log(location.pathname);
 
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [hideShowSideBar,setHideShowSideBar] = useState(true);
+
+  const handleShowLogoutModal = () => setShowLogoutModal(true);
+  const handleCloseLogoutModal = () => setShowLogoutModal(false);
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigator('/admin/login');
+    handleCloseLogoutModal();
+  };
+
+  const Logout = () => {
+    handleShowLogoutModal();
+  };
+
+  const sideBarToggle = () => {
+    setHideShowSideBar(!hideShowSideBar);
+  }
+ 
 
   return (
     <>
       {location.pathname == "/admin/login" ? <Outlet></Outlet> :
-        <Maindiv className='admin-main-div'>
-          <div className=' bg-dark '>
-            <div className='row'>
-              <div className='col-sm-3 first-section'>
+        <Maindiv className='admin-main-div h-100'>
+          <div className=' bg-dark h-100'>
+            <div className='row vh-100'>
+              <SideBarHumburgur className="p-2" style={hideShowSideBar?{}:{ left: '1%'}} onClick={sideBarToggle}><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </SideBarHumburgur>
+              <div className={hideShowSideBar?'col-sm-3 sidebar':'d-none sidebar'} style={hideShowSideBar?{transform:'translateX(0%)'}:{transform:'translateX(-100%)'}}>
                 <div className='image-div'>
                   <img src={Logo} height='100px' width='100px' className='d-flex mx-auto'></img>
                 </div>
 
                 {/*  */}
                 <div className='search-button pt-3 ps-3'>
-                  <Link class="d-flex ps-3 dashboard flex-row " to={'/admin/dashboard'}>
-                    <div class="p-2  text-white">
+                  <Link className="d-flex ps-3 dashboard flex-row " to={'/admin/dashboard'}>
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faEnvelope} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Dashboard</p>
                     </div>
                   </Link>
                   {/*  */}
 
-                  <Link class="d-flex pos ps-3 flex-row" to={'/admin/pos'}>
-                    <div class="p-2  text-white">
+                  <Link className="d-flex pos ps-3 flex-row" to={'/admin/pos'}>
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faBagShopping} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>POS</p>
                     </div>
                   </Link>
                   {/*  */}
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faBagShopping} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Order</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faUsers} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Customer</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faTicket} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Coupon</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faPen} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Expense</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faBagShopping} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'> Service</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faUsers} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Branch/Store</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faFile} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Reports</p>
                     </div>
                   </div>
 
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faArrowsTurnToDots} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Tools</p>
                     </div>
                   </div>
                   {/*  */}
 
-                  <div class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div className="d-flex ps-3 flex-row">
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faUser} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Profile</p>
                     </div>
                   </div>
 
-                  <Link to={"/admin/login"} class="d-flex ps-3 flex-row">
-                    <div class="p-2  text-white">
+                  <div onClick={Logout} className="d-flex ps-3 flex-row" style={{cursor:'pointer'}}>
+                    <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                     </div>
-                    <div class="p-2 text-white">
+                    <div className="p-2 text-white">
                       <p className='fw-4'>Logout</p>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               </div>
 
               {/* Second Part */}
 
-              <div className='col-sm-9 pt-5 order-div' >
+              <div className={hideShowSideBar?'col-sm-9 pt-5 order-div':'col-sm-12 pt-5 order-div'} >
                 <Outlet></Outlet>
               </div>
 
@@ -248,8 +276,13 @@ export const Admin = () => {
             </div>
 
           </div>
-
+        <LogoutModal
+          show={showLogoutModal}
+          handleClose={handleCloseLogoutModal}
+          handleLogout={handleLogout}
+        />
         </Maindiv>
+        
 
       }
     </>

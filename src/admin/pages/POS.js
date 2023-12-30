@@ -88,14 +88,14 @@ export default function POS() {
     <>
       <Maindiv className='pos-main-div'>
         <div className='row'>
-          <div class=" col-sm-6 d-flex justify-content-start mb-3">
-            <div class="p-2"><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </div>
-            <div class="p-2"><h4 className='text-white'>POS</h4></div>
+          <div className=" col-sm-6 d-flex justify-content-start mb-3">
+            {/* <div className="p-2"><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </div> */}
+            <div className="p-2"><h4 className='text-white'>POS</h4></div>
           </div>
 
 
-          <div class=" col-sm-6 d-flex justify-content-end mb-3">
-            <div class=" me-5 mt-2">
+          <div className=" col-sm-6 d-flex justify-content-end mb-3">
+            <div className=" me-5 mt-2">
               <FontAwesomeIcon icon={faBell} style={{ color: "#ffd160", }} className='fs-5  ps-2 pt-2 text-center' />
             </div>
             <div className='me-5 mb-5'>
@@ -112,33 +112,33 @@ export default function POS() {
 
         <div className='row'>
           <div className='col-sm-6'>
-            <div class="d-grid ">
-              <button type="button" class="btn d-flex justify-content-start  btn-block text-secondary pos-search-button">
+            <div className="d-grid ">
+              <button type="button" className="btn d-flex justify-content-start  btn-block text-secondary pos-search-button">
                 Search...
               </button>
             </div>
-            <div class="d-flex mt-3 justify-content-between  mb-3">
+            <div className="d-flex mt-3 justify-content-between  mb-3">
               <div className="ms-2 ps-2 pos-image-1">
                 <img src={Image1} className='img-fluid pos-image-hover pt-2 '></img>
                 <p className='text-white '>Pasta</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image2} className='img-fluid pos-image-hover pt-0 '></img>
                 <p className='text-white '>PaniPuri</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image3} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pizza</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image4} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Rolls</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image5} className='img-fluid pos-image-hover pt-3'></img>
                 <p className='text-white '>Momos</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image6} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pav Bhaji</p>
               </div>
@@ -146,28 +146,28 @@ export default function POS() {
 
 
 
-            <div class="d-flex mt-3 justify-content-between mb-3">
+            <div className="d-flex mt-3 justify-content-between mb-3">
               <div className="ms-2 ps-2 pos-image-1">
                 <img src={Image1} className='img-fluid pos-image-hover pt-2 '></img>
                 <p className='text-white '>Pasta</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image2} className='img-fluid pos-image-hover pt-0 '></img>
                 <p className='text-white '>PaniPuri</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image3} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pizza</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image4} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Rolls</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image5} className='img-fluid pos-image-hover pt-3'></img>
                 <p className='text-white '>Momos</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image6} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pav Bhaji</p>
               </div>
@@ -175,28 +175,28 @@ export default function POS() {
 
 
 
-            <div class="d-flex mt-3 justify-content-between mb-3">
+            <div className="d-flex mt-3 justify-content-between mb-3">
               <div className="ms-2 ps-2 pos-image-1">
                 <img src={Image1} className='img-fluid pos-image-hover pt-2 '></img>
                 <p className='text-white '>Pasta</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image2} className='img-fluid pos-image-hover pt-0 '></img>
                 <p className='text-white '>PaniPuri</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image3} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pizza</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image4} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Rolls</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image5} className='img-fluid pos-image-hover pt-3'></img>
                 <p className='text-white '>Momos</p>
               </div>
-              <div class="p-2 ms-2 pos-image-1">
+              <div className="p-2 ms-2 pos-image-1">
                 <img src={Image6} className='img-fluid pos-image-hover pt-2'></img>
                 <p className='text-white '>Pav Bhaji</p>
               </div>
@@ -239,7 +239,7 @@ export default function POS() {
 
               <div className='col-sm-3'>
                 <div>
-                  <button type="button" class="btn add-btn btn-primary">
+                  <button type="button" className="btn add-btn btn-primary">
                     <FontAwesomeIcon icon={faPlus} className='pe-2' />
                     Add
                   </button>

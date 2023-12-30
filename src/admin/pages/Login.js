@@ -1,6 +1,9 @@
 // @flow 
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import toastr from "toastr";
 import 'toastr/build/toastr.css';
@@ -79,30 +82,35 @@ const Maindiv = styled.div`
 const Link = styled.div``
 
 export const Login = (props) =>{
-
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const [isVisible, setVisible] = useState(false);
 
+const navigator = useNavigate();
 
 const submitForm = (event)=>{
     event.preventDefault();
-
     const newEntry = {email:email, password:password};
 
     axios.post('http://localhost:5000/login', newEntry)
     .then(function (response) {
       console.log(response);
+      toastr.success(response.data.message);
+      localStorage.setItem('token',response.data.token);
+      navigator('/admin/dashboard');
     })
     .catch(function (error) {
       console.log(error);
+      toastr.error(error.response.data.message);
     });
 
-    toastr.success("Hello mere sonu");
     
 }
 
 
-
+const toggle = () => {
+  setVisible(!isVisible);
+};
 
 
 
@@ -115,13 +123,17 @@ const submitForm = (event)=>{
                     <div className='form'>
                         {/* <label>Username</label>
                 <input type='text' name='user'/> */}
-
-                        <label>Email</label>
-                        <input type='email' name='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
-
-                        <label>Password</label>
-                        <input type='password' name='pass1' value= { password} onChange={(event)=> setPassword(event.target.value)}/>
-
+                        <div className='form-control border-0'>
+                          <label>Email</label>
+                          <input type='email' name='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
+                        </div>
+                        <div className='form-control border-0 align-items-center position-relative'>
+                          <label>Password</label>
+                          <input type={!isVisible ? "password" : "text"} name='pass1' value= { password} onChange={(event)=> setPassword(event.target.value)}/>
+                          <span className="icon" onClick={toggle} style={{position: 'absolute',top: '50px', marginLeft:'-30px',cursor:'pointer'}}> 
+                            {isVisible ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
+                          </span>
+                        </div>
                         <label><Link to='' className='forget-password'>Forget Password</Link></label>
 
                         {/* <label>Confirm Password</label>
