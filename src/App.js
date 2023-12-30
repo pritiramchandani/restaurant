@@ -1,8 +1,8 @@
 import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from './components/Navbar';
 import { Aboutus } from './pages/Aboutus';
 import { Home } from './pages/Home';
@@ -13,6 +13,7 @@ import { Login } from './admin/pages/Login';
 import { Admin } from './admin/pages/Admin';
 import POS from './admin/pages/POS';
 import Dashboard from './admin/pages/Dashboard';
+import { Product } from './admin/pages/Product';
 
 
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='forgetpassword' element={<Login/>} />
             <Route path='dashboard' element={<Dashboard/>} />
             <Route path='pos' element={<POS/>} />
+            <Route path='product' element={<Product/>} />
 
           </Route>
       </Routes>
