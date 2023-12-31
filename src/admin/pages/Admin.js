@@ -2,14 +2,9 @@ import Logo from './../../images/logo.png';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faArrowUpWideShort, faArrowsTurnToDots, faBagShopping, faBars, faDownLeftAndUpRightToCenter, faEnvelope, faFile, faMagnifyingGlass, faPen, faPlus, faRightFromBracket, faTicket, faUpDownLeftRight, faUser, faUserGroup, faUsers } from '@fortawesome/free-solid-svg-icons';
-<<<<<<< HEAD
-import { Link, Outlet, useLocation } from 'react-router-dom';
-import { AdminMenu } from '../../components/AdminMenu';
-=======
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import LogoutModal from '../../components/LogoutModal';
 import { useState } from 'react';
->>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
 
 
 
@@ -110,21 +105,10 @@ const SideBarHumburgur = styled.button`
 
 
 export const Admin = () => {
-  
+
   const location = useLocation();
   const navigator = useNavigate();
   console.log(location.pathname);
-  
-  var sidebarstyle=true
-  
-  const sidebarfunc = () =>{
-    
-    sidebarstyle= false
-    console.log("Mere Chidkuram",sidebarstyle);
-
-
-
-  }
 
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [hideShowSideBar,setHideShowSideBar] = useState(true);
@@ -149,29 +133,16 @@ export const Admin = () => {
   return (
     <>
       {location.pathname == "/admin/login" ? <Outlet></Outlet> :
-<<<<<<< HEAD
-        <Maindiv className='admin-main-div'>
-          <div className=' bg-dark '>
-            <div className='row'>
-              <div className='col-sm-3 first-section'id='sidebar'>
-=======
         <Maindiv className='admin-main-div h-100'>
           <div className=' bg-dark h-100'>
             <div className='row vh-100'>
               <SideBarHumburgur className="p-2" style={hideShowSideBar?{}:{ left: '1%'}} onClick={sideBarToggle}><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </SideBarHumburgur>
               <div className={hideShowSideBar?'col-sm-3 sidebar':'d-none sidebar'} style={hideShowSideBar?{transform:'translateX(0%)'}:{transform:'translateX(-100%)'}}>
->>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
                 <div className='image-div'>
                   <img src={Logo} height='100px' width='100px' className='d-flex mx-auto'></img>
-                  <div className="p-2 " onClick={sidebarfunc}><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </div>
                 </div>
 
                 {/*  */}
-<<<<<<< HEAD
-
-                {sidebarstyle ?<AdminMenu></AdminMenu>:<></>}
-                
-=======
                 <div className='search-button pt-3 ps-3'>
                   <Link className="d-flex ps-3 dashboard flex-row " to={'/admin/dashboard'}>
                     <div className="p-2  text-white">
@@ -236,14 +207,14 @@ export const Admin = () => {
 
                   {/*  */}
 
-                  <div className="d-flex ps-3 flex-row">
+                  <Link className="d-flex product-text ps-3 flex-row" to={'/admin/product'}>
                     <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faBagShopping} />
                     </div>
                     <div className="p-2 text-white">
-                      <p className='fw-4'> Service</p>
+                      <p className='fw-4'>Product</p>
                     </div>
-                  </div>
+                  </Link>
 
                   {/*  */}
 
@@ -297,7 +268,6 @@ export const Admin = () => {
                     </div>
                   </div>
                 </div>
->>>>>>> 067c8c80da13aa6011649e88c44d196c481590a3
               </div>
 
               {/* Second Part */}
@@ -322,4 +292,3 @@ export const Admin = () => {
     </>
   );
 }
-
