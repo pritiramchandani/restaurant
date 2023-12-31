@@ -19,11 +19,6 @@ height:{ 100vh;
   
 }
 
-.image-div {
-  width: 104%;
-  border-bottom: 1px solid rgb(233, 255, 178);
-  
-}
 
 
 .dashboard {
@@ -111,7 +106,7 @@ export const Admin = () => {
   console.log(location.pathname);
 
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [hideShowSideBar,setHideShowSideBar] = useState(true);
+  const [hideShowSideBar, setHideShowSideBar] = useState(true);
 
   const handleShowLogoutModal = () => setShowLogoutModal(true);
   const handleCloseLogoutModal = () => setShowLogoutModal(false);
@@ -128,7 +123,7 @@ export const Admin = () => {
   const sideBarToggle = () => {
     setHideShowSideBar(!hideShowSideBar);
   }
- 
+
 
   return (
     <>
@@ -136,9 +131,9 @@ export const Admin = () => {
         <Maindiv className='admin-main-div h-100'>
           <div className=' bg-dark h-100'>
             <div className='row vh-100'>
-              <SideBarHumburgur className="p-2" style={hideShowSideBar?{}:{ left: '1%'}} onClick={sideBarToggle}><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </SideBarHumburgur>
-              <div className={hideShowSideBar?'col-sm-3 sidebar':'d-none sidebar'} style={hideShowSideBar?{transform:'translateX(0%)'}:{transform:'translateX(-100%)'}}>
-                <div className='image-div'>
+              <SideBarHumburgur className="p-2" style={hideShowSideBar ? {} : { left: '1%' }} onClick={sideBarToggle}><FontAwesomeIcon icon={faBars} style={{ color: "#ffd160", }} className='fs-3' /> </SideBarHumburgur>
+              <div className={hideShowSideBar ? 'col-sm-3 sidebar' : 'd-none sidebar'} style={hideShowSideBar ? { transform: 'translateX(0%)' } : { transform: 'translateX(-100%)' }}>
+                <div className=''>
                   <img src={Logo} height='100px' width='100px' className='d-flex mx-auto'></img>
                 </div>
 
@@ -259,7 +254,7 @@ export const Admin = () => {
                     </div>
                   </div>
 
-                  <div onClick={Logout} className="d-flex ps-3 flex-row" style={{cursor:'pointer'}}>
+                  <div onClick={Logout} className="d-flex ps-3 flex-row" style={{ cursor: 'pointer' }}>
                     <div className="p-2  text-white">
                       <FontAwesomeIcon icon={faRightFromBracket} />
                     </div>
@@ -272,7 +267,7 @@ export const Admin = () => {
 
               {/* Second Part */}
 
-              <div className={hideShowSideBar?'col-sm-9 pt-5 order-div':'col-sm-12 pt-5 order-div'} >
+              <div className={hideShowSideBar ? 'col-sm-9 pt-5 order-div' : 'col-sm-12 pt-5 order-div'} >
                 <Outlet></Outlet>
               </div>
 
@@ -280,13 +275,13 @@ export const Admin = () => {
             </div>
 
           </div>
-        <LogoutModal
-          show={showLogoutModal}
-          handleClose={handleCloseLogoutModal}
-          handleLogout={handleLogout}
-        />
+          <LogoutModal
+            show={showLogoutModal}
+            handleClose={handleCloseLogoutModal}
+            handleLogout={handleLogout}
+          />
         </Maindiv>
-        
+
 
       }
     </>
