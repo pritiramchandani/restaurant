@@ -102,17 +102,51 @@ export function Product() {
           </div>
         </div>
         <div className='col-sm-8  pe-5 '>
-        <div class="d-flex justify-content-end  mb-3">
-    <div class="p-2">
-      <p className='text-white'>Search:</p>
-    </div>
-    <div class="p-2 ">
-    <input type="text" placeholder="" className='search-btn bg-dark' name="search2"></input>
-    </div>
-  
-  </div>
+          <div class="d-flex justify-content-end  mb-3">
+            <div class="p-2">
+              <p className='text-white'>Search:</p>
+            </div>
+            <div class="p-2 ">
+              <input type="text" placeholder="" className='search-btn bg-dark' name="search2"></input>
+            </div>
+
+          </div>
         </div>
       </div>
+
+
+
+      <div className='row'>
+        <div className='col-sm-12'>
+          <div class="table-responsive">
+            <table class="table me-4 table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Service Name</th>
+                  <th>Service Type</th>
+                  <th>Store Name</th>
+                  <th>Store</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div className='row'>
+        <div className='col-sm-6 pt-2'>
+          <div className='text-secondary'><p>Show 1 to 10 of 100 enteries</p></div>
+        </div>
+
+
+
+
+      </div>
+
+
 
 
 
