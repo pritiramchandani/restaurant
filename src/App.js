@@ -37,7 +37,7 @@ function App() {
             <Route
               path="dashboard"
               element={<PrivateRoute
-                element={<Dashboard />}
+                element={<Dashboard />} 
               />}
             />
             <Route
