@@ -20,19 +20,6 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(()=>{
-    let token = localStorage.getItem('token');
-    console.log(token);
-    if (token.length > 0) {
-      setIsAuthenticated(!isAuthenticated);
-    }
-
-    console.log(token);
-  },[]);
-
-
   return (
     <>
       <BrowserRouter>
@@ -51,17 +38,12 @@ function App() {
               path="dashboard"
               element={<PrivateRoute
                 element={<Dashboard />}
-                isAuthenticated={isAuthenticated}
-                fallbackPath="/admin/login"
               />}
             />
             <Route
               path="pos"
               element={<PrivateRoute
                 element={<POS />}
-                path="pos"
-                isAuthenticated={isAuthenticated}
-                fallbackPath="/admin/login"
               />}
             />
           </Route>

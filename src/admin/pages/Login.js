@@ -2,7 +2,7 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 import toastr from "toastr";
@@ -112,10 +112,6 @@ const toggle = () => {
   setVisible(!isVisible);
 };
 
-
-
-
-
   return (
         <div>
             <Maindiv className='login-div bg-dark'>
@@ -130,7 +126,7 @@ const toggle = () => {
                         <div className='form-control border-0 align-items-center position-relative'>
                           <label>Password</label>
                           <input type={!isVisible ? "password" : "text"} name='pass1' value= { password} onChange={(event)=> setPassword(event.target.value)}/>
-                          <span className="icon" onClick={toggle} style={{position: 'absolute',top: '50px', marginLeft:'-30px',cursor:'pointer'}}> 
+                          <span className="icon" onClick={toggle} style={{position: 'absolute',top: '50px', marginLeft:'-30px',cursor:'pointer,'}}> 
                             {isVisible ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
                           </span>
                         </div>

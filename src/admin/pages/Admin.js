@@ -104,13 +104,11 @@ export const Admin = () => {
 
   const location = useLocation();
   const navigator = useNavigate();
-  console.log(location.pathname);
-
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [hideShowSideBar,setHideShowSideBar] = useState(true);
-
   const handleShowLogoutModal = () => setShowLogoutModal(true);
   const handleCloseLogoutModal = () => setShowLogoutModal(false);
+  
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigator('/admin/login');
