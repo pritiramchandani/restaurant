@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ element }) => {
+const PrivateRoute = ({ element, isAuthenticated, fallbackPath }) => {
 
-
-  return localStorage.getItem('token') ? (
+  return isAuthenticated ? (
     element
   ) : (
-    <Navigate to={'/admin/login'} replace />
+    <Navigate to={fallbackPath} replace />
   );
 };
 
